@@ -23,7 +23,7 @@ current_word = ['_']*len(secret_word)
 str_so_far = ''.join(current_word)
 while(num_lives > 0):
     flag = False
-    print(''.join(current_word),'\n',sep=' ')
+    print(' '.join(current_word),'\n',sep=' ')
     guess = input('Enter a letter: ')
     for i, letter in enumerate(secret_word):
         if guess == letter:
