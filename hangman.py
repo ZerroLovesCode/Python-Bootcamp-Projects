@@ -16,12 +16,73 @@ welcome_msg = '''
  '---'   '---'`--'  `" '--'   '--'  `'---'                             `--'  `" '--'   '--' 
                                                                                            '''
 print(welcome_msg)
-num_lives = 5
+
+num_lives = 6
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 word_list = ['words', 'for', 'testing', 'this', 'game']
 secret_word = random.choice(word_list)
 current_word = ['_']*len(secret_word)
 str_so_far = ''.join(current_word)
+
 while(num_lives > 0):
+    
     flag = False
     print(' '.join(current_word),'\n',sep=' ')
     guess = input('Enter a letter: ')
@@ -38,3 +99,4 @@ while(num_lives > 0):
     if str_so_far == secret_word:
         print(f'\nCongrats! You have won! The secret word was "{str_so_far}"')
         break
+    print(stages[num_lives])
