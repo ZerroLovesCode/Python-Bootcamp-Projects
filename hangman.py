@@ -1,5 +1,21 @@
 import random
 
+welcome_msg = '''
+                                                                                            
+                                                                                            
+   .                      _..._                        __  __   ___                _..._    
+ .'|                    .'     '.   .--./)            |  |/  `.'   `.            .'     '.  
+<  |                   .   .-.   . /.''\\             |   .-.  .-.   '          .   .-.   . 
+ | |             __    |  '   '  || |  | |            |  |  |  |  |  |    __    |  '   '  | 
+ | | .---.   .:--.'.  |  |   |  | \`-' /             |  |  |  |  |  | .:--.'.  |  |   |  | 
+ | |/.--. \ / |   \ | |  |   |  | /("'`              |  |  |  |  |  |/ |   \ | |  |   |  | 
+ |  /    | | `" __ | | |  |   |  | \ '---.            |  |  |  |  |  |`" __ | | |  |   |  | 
+ | |     | |  .'.''| | |  |   |  |  /'""'.\           |__|  |__|  |__| .'.''| | |  |   |  | 
+ | |     | | / /   | |_|  |   |  | ||     ||                          / /   | |_|  |   |  | 
+ | '.    | '.\ \._,\ '/|  |   |  | \'. __//                           \ \._,\ '/|  |   |  | 
+ '---'   '---'`--'  `" '--'   '--'  `'---'                             `--'  `" '--'   '--' 
+                                                                                           '''
+print(welcome_msg)
 num_lives = 5
 word_list = ['words', 'for', 'testing', 'this', 'game']
 secret_word = random.choice(word_list)
@@ -7,7 +23,7 @@ current_word = ['_']*len(secret_word)
 str_so_far = ''.join(current_word)
 while(num_lives > 0):
     flag = False
-    print(str_so_far,'\n',sep=' ')
+    print(''.join(current_word),'\n',sep=' ')
     guess = input('Enter a letter: ')
     for i, letter in enumerate(secret_word):
         if guess == letter:
