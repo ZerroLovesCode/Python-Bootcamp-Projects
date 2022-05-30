@@ -26,7 +26,7 @@ if user_bet:
 while start_race:
     for turtle in turtle_list:
         turtle.forward(random.randint(0, 10))
-        if turtle.xcor() >= 250:
+        if turtle.xcor() >= 230:
             print(f'The winner is {turtle.color()[0]} turtle!')
             if user_bet.lower() == turtle.color():
                 print('You have won the bet!')
