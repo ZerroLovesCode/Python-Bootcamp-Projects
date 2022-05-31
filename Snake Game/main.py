@@ -1,5 +1,6 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 from snake import Snake
+from food import Food
 import time
 
 
@@ -10,6 +11,7 @@ scr.title('Snake Game')
 scr.tracer(0)
 
 s = Snake()
+f = Food()
 
 scr.listen()
 scr.onkey(s.up, "Up")
@@ -22,5 +24,9 @@ while run:
     scr.update()
     time.sleep(0.07)
     s.move()
+
+    #  detect collisions
+    if s.snake_body[0].distance(f) < 15:
+        f.refresh()
 
 scr.exitonclick()
